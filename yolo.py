@@ -31,7 +31,6 @@ class ObjectDetections:
                 class_id = int(box.cls[0])
                 label = f"{self.model.names[class_id]} {confidence:.2f}"
 
-                # Draw the bounding box and label on the frame
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
                 cv2.putText(frame, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         return frame
@@ -52,11 +51,11 @@ class ObjectDetections:
             end_time = time()
 
             fps = 1 / (end_time - start_time)
-            cv2.putText(frame, f"FPS: {fps:.2f}", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            cv2.putText(frame, f"FPS: {fps:.0f}", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
 
             cv2.imshow("YOLO Object Detection", frame)
 
-            if cv2.waitKey(1) & 0xFF == ord("q"):
+            if cv2.waitKey(1) & 0xFF == ord("n"):
                 break
 
         cap.release()
@@ -64,6 +63,6 @@ class ObjectDetections:
 
 
 if __name__ == "__main__":
-    capture_index = 0  # Change this to the appropriate index or file path
+    capture_index = 0
     detector = ObjectDetections(capture_index)
     detector()
