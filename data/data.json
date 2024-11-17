@@ -1,0 +1,22 @@
+{
+  "pasangan1": {
+    "nama": "John",
+    "umur": 30
+  },
+  "pasangan2": {
+    "nama": "Jane",
+    "umur": 25
+  },
+  "pasangan3": {
+    "nama": "Alice",
+    "umur": 35
+  },
+  "pasangan4": {
+    "nama": "Bob",
+    "umur": 40
+  },
+  "pasangan5": {
+    "nama": "Charlie",
+    "umur": 28
+  }
+}
